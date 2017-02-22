@@ -2,8 +2,6 @@ package com.github.lzy.play.domain;
 
 import lombok.Data;
 
-import java.util.Date;
-
 /**
  * Description:
  *
@@ -12,11 +10,8 @@ import java.util.Date;
  * @since 2017-02-22
  */
 @Data
-public class User {
+public class Friend {
 	private Long id;
-	private String name;
-	private String username;
-	private String password;
-	private Date registerTime;
-	private Date modifyTime;
+	private Long fromId;
+	private Long toId;
 }
