@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Grid Template for Bootstrap</title>
+    <title>Play Talk</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
@@ -114,73 +114,18 @@
                 </div>
 
                 <!--Messages-->
-                <div class="row content-wrap messages">
-                    <div class="msg">
-                        <div class="media-body">
-                            <small class="pull-right time"><i class="fa fa-clock-o"></i> 12:10am</small>
+                <div class="row content-wrap messages" id="message-box">
 
-                            <h5 class="media-heading">Walter White</h5>
-                            <small class="col-sm-11">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Phasellus semper scelerisque purus, et semper nisl lacinia sit amet. Praesent venenatis turpis vitae purus semper, eget sagittis velit venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos...</small>
-                        </div>
-                    </div>
-                    <div class="msg">
-                        <div class="media-body">
-                            <small class="pull-right time"><i class="fa fa-clock-o"></i> 12:10am</small>
-
-                            <h5 class="media-heading">Walter White</h5>
-                            <small class="col-sm-11">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Phasellus semper scelerisque purus, et semper nisl lacinia sit amet. Praesent venenatis turpis vitae purus semper, eget sagittis velit venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos...</small>
-                        </div>
-                    </div>
-                    <div class="msg">
-                        <div class="media-body">
-                            <small class="pull-right time"><i class="fa fa-clock-o"></i> 12:10am</small>
-
-                            <h5 class="media-heading">Walter White</h5>
-                            <small class="col-sm-11">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Phasellus semper scelerisque purus, et semper nisl lacinia sit amet. Praesent venenatis turpis vitae purus semper, eget sagittis velit venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos...</small>
-                        </div>
-                    </div>
-                    <div class="msg">
-                        <div class="media-body">
-                            <small class="pull-right time"><i class="fa fa-clock-o"></i> 12:10am</small>
-
-                            <h5 class="media-heading">Walter White</h5>
-                            <small class="col-sm-11">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Phasellus semper scelerisque purus, et semper nisl lacinia sit amet. Praesent venenatis turpis vitae purus semper, eget sagittis velit venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos...</small>
-                        </div>
-                    </div>
-                    <div class="msg">
-                        <div class="media-body">
-                            <small class="pull-right time"><i class="fa fa-clock-o"></i> 12:10am</small>
-
-                            <h5 class="media-heading">Walter White</h5>
-                            <small class="col-sm-11">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Phasellus semper scelerisque purus, et semper nisl lacinia sit amet. Praesent venenatis turpis vitae purus semper, eget sagittis velit venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos...</small>
-                        </div>
-                    </div>
-                    <div class="msg">
-                        <div class="media-body">
-                            <small class="pull-right time"><i class="fa fa-clock-o"></i> 12:10am</small>
-
-                            <h5 class="media-heading">Walter White</h5>
-                            <small class="col-sm-11">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Phasellus semper scelerisque purus, et semper nisl lacinia sit amet. Praesent venenatis turpis vitae purus semper, eget sagittis velit venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos...</small>
-                        </div>
-                    </div>
-                    <div class="msg">
-                        <div class="media-body">
-                            <small class="pull-right time"><i class="fa fa-clock-o"></i> 12:10am</small>
-
-                            <h5 class="media-heading">Walter White</h5>
-                            <small class="col-sm-11">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Phasellus semper scelerisque purus, et semper nisl lacinia sit amet. Praesent venenatis turpis vitae purus semper, eget sagittis velit venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos...</small>
-                        </div>
-                    </div>
                 </div>
 
                 <!--Message box & Send Button-->
                 <div class="row send-wrap">
                     <div class="send-message">
                         <div class="message-text">
-                            <textarea class="no-resize-bar form-control" rows="2" placeholder="Write a message..."></textarea>
+                            <textarea id="input-text" class="no-resize-bar form-control" rows="2" placeholder="Write a message..."></textarea>
                         </div>
                         <div class="send-button">
-                            <a class="btn">Send <i class="fa fa-send"></i></a>
+                            <a class="btn" id="send-btn">Send <i class="fa fa-send"></i></a>
                         </div>
                     </div>
                 </div>
@@ -239,5 +184,6 @@
 
 </body>
 
-<script src="/static/js/register.js"></script>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/talk.js"></script>
 </html>

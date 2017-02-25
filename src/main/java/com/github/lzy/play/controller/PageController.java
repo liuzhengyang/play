@@ -30,6 +30,10 @@ public class PageController {
 		return "index";
 	}
 
+	@RequestMapping("/login")
+	public String login() {
+		return "register";
+	}
 	@RequestMapping("/register")
 	public String register() {
 		return "register";
@@ -42,6 +46,15 @@ public class PageController {
 
 		model.addAttribute("user", user);
 		model.addAttribute("friends", friends);
+
+		String s = "<div class=\"msg\">\n" +
+				"                        <div class=\"media-body\">\n" +
+				"                            <small class=\"pull-right time\"><i class=\"fa fa-clock-o\"></i> 12:10am</small>\n" +
+				"\n" +
+				"                            <h5 class=\"media-heading\">Walter White</h5>\n" +
+				"                            <small class=\"col-sm-11\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Phasellus semper scelerisque purus, et semper nisl lacinia sit amet. Praesent venenatis turpis vitae purus semper, eget sagittis velit venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos...</small>\n" +
+				"                        </div>\n" +
+				"                    </div>";
 		return "talk";
 	}
 }

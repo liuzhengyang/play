@@ -14,10 +14,12 @@ import java.util.Date;
 @Data
 public class Message {
 	private Long id;
-	private Long content;
+	private String content;
 	private Date sendTime;
-	private Long fromUserId;
+	private Long senderId;
 	// 可能是发给用户的消息，就是用户id，若是群消息则是群id
-	private Long toId;
+	private Long receiverId;
+	// 消息状态，0未读，1，已读，2，撤回，3，删除
+	private int status;
 
 }
