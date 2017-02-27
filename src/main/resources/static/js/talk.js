@@ -7,11 +7,12 @@ $('.info-btn').on('click', function () {
 $(function () {
 
     // Create WebSocket connection.
-    const socket = new WebSocket('ws://localhost:8081');
+    const socket = new WebSocket('ws://localhost:8081/ws');
 
     // Connection opened
     socket.addEventListener('open', function (event) {
-        socket.send('Hello Server!');
+        // socket.send('Hello Server!');
+        console.log("open connection to server")
     });
 
     // Listen for messages
@@ -27,7 +28,7 @@ $(function () {
         // $("#input-text").val('')
         var content = $("#input-text").val();
         var time = new Date().getTime();
-        var receiverId = 2;
+        var receiverId = $("#receiver-id").val();
         var newMessageHtml = "<div class=\"msg\">\n" +
             "                        <div class=\"media-body\">\n" +
             "                            <small class=\"pull-right time\"><i class=\"fa fa-clock-o\"></i> " + time + "</small>\n" +
@@ -42,7 +43,7 @@ $(function () {
 
         // send message api
         var data = {
-            senderId: '1',
+            senderId: $("#user_id").val(),
             content: content,
             sendTime: time,
             receiverId: receiverId
@@ -50,6 +51,27 @@ $(function () {
         $.post("/api/message/send", data, function (data) {
             console.log("result " + data);
         });
+
+        var wsData = {
+            type: 'SEND_MSG',
+            payload: data
+        };
+        socket.send(JSON.stringify(wsData));
+    })
+
+
+    $(".list-friend").on('click', function() {
+        var receiver_id = $(this).find('.friend-id').text();
+        $("#receiver-id").val(receiver_id);
+        console.log($("#receiver-id").val())
+
+        var wsData = {
+            type: 'MSG_LIST',
+            payload: {
+
+            }
+        }
+
     })
 
 })

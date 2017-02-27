@@ -49,7 +49,7 @@
                 <div class="row content-wrap">
                     <#list friends as friend>
                         <div class="contact btn">
-                            <div class="media-body">
+                            <div class="media-body list-friend">
                                 <#--<h5 class="media-heading">#{friend.userModel.username}</h5>-->
                                 <h5 class="media-heading">${friend.userModel.username}</h5>
                             </div>
@@ -71,6 +71,7 @@
                 <div class="row header-wrap">
                     <div class="chat-header col-sm-12">
                         <h4 id="username">${user.name}</h4>
+                        <input id="user_id" hidden value="#{user.id}">
                         <div class="header-button">
                             <a class="btn pull-right" href="#Contacts" data-toggle="collapse">
                                 <i class="fa fa-pencil-square-o fa-lg"></i>
@@ -83,7 +84,8 @@
                 <div class="row content-wrap">
                     <#list friends as friend>
                         <div class="conversation btn">
-                            <div class="media-body">
+                            <div class="media-body list-friend">
+                                <span hidden class="friend-id">${friend.userModel.id}</span>
                                 <h5 class="media-heading" id="contactName">${friend.userModel.username}</h5>
                                 <small class="pull-right time">Last seen 12:10am</small>
                             </div>
@@ -113,6 +115,7 @@
                     </div>
                 </div>
 
+                <input type="hidden" id="receiver-id"/>
                 <!--Messages-->
                 <div class="row content-wrap messages" id="message-box">
 
