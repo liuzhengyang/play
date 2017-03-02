@@ -4,10 +4,10 @@ import com.alibaba.fastjson.JSON;
 import com.github.lzy.play.domain.Message;
 import com.github.lzy.play.domain.User;
 import com.github.lzy.play.mapper.UserMapper;
-import com.github.lzy.play.model.MessageModel;
 import com.github.lzy.play.param.MessageParam;
 import com.github.lzy.play.service.IIdService;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import redis.clients.jedis.Jedis;
 
@@ -35,7 +35,7 @@ public class ApiController {
 		return "index";
 	}
 
-	@RequestMapping("/user")
+	@RequestMapping(method = RequestMethod.GET, value = "/user", produces = "application/json")
 	public User user(long userId) {
 		User userById = userMapper.getUserById(userId);
 		return userById;
